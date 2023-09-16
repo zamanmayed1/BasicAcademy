@@ -8,7 +8,7 @@ const CategoryList = () => {
   useEffect(() => {
     axios
       .get(
-        "http://basicacademy-backend.local/wp-json/wp/v2/coursecategory?per_page=20"
+        "https://guaranteesteel.s3-tastewp.com/wp-json/wp/v2/coursecategory?per_page=20"
       )
       .then(function (response) {
         setCategory(response.data);
@@ -21,7 +21,7 @@ const CategoryList = () => {
   return (
     <div>
       {category
-        .sort((a, b) => b.count - a.count)
+        .sort((a, b) => a.name.localeCompare(b.name))
         .map((val, i) => {
           return (
             <Link

@@ -11,9 +11,10 @@ import Home from "./pages/home";
 import SingleCourse from "./pages/single-course";
 import ContactUs from "./pages/contact-us";
 import AboutUs from "./pages/about-us";
-import Courses from "./pages/courses";
+// import Courses from "./pages/courses";
 import Archive from "./pages/archive";
 
+const LazyCourses = React.lazy(()=>import('./pages/courses'))
 
 const router = createBrowserRouter([
   {
@@ -35,7 +36,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/courses",
-        element: <Courses/>,
+        element: <React.Suspense fallback="Loading"><LazyCourses/></React.Suspense> ,
       },
       {
         path: "/about",

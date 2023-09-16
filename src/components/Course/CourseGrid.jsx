@@ -11,7 +11,7 @@ const CourseGrid = () => {
   useEffect(() => {
     setIsLoading(true); // Set loading to true when fetching data
     axios
-      .get("http://basicacademy-backend.local/wp-json/wp/v2/course")
+      .get("https://guaranteesteel.s3-tastewp.com/wp-json/wp/v2/course")
       .then(function (response) {
         setCourses(response.data);
         setIsLoading(false); // Set loading to false when data is fetched

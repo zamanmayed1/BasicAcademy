@@ -6,7 +6,7 @@ import CategoryList from '../components/Course/CategoryList'
 import Loader from '../components/Child/Loader'
 const Archive = () => {
   const { id, slug } = useParams();
-  const url = `http://basicacademy-backend.local/wp-json/wp/v2/course?coursecategory=${id}`;
+  const url = `https://guaranteesteel.s3-tastewp.com/wp-json/wp/v2/course?coursecategory=${id}`;
   const [courses, setCourses] = useState([]);
   const [isLoading, setIsLoading] = useState(true); // Add loading state
 

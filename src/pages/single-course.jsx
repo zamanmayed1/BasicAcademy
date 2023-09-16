@@ -17,7 +17,7 @@ const SingleCourse = () => {
   const thumbnile = meta?.thumbnile;
   const overview = content?.rendered;
 
-  let url = `http://basicacademy-backend.local/wp-json/wp/v2/course/${id}`;
+  let url = `https://guaranteesteel.s3-tastewp.com/wp-json/wp/v2/course/${id}`;
   useEffect(() => {
     axios
       .get(url)
@@ -93,9 +93,13 @@ const SingleCourse = () => {
               style={{
                 backgroundImage: `url(${thumbnile})`,
               }}
-              className="w-full h-[250px] md:h-[180px] bg-cover bg-no-repeat bg-center rounded-md"
+              className="w-full h-[250px] md:h-[180px] bg-cover border-2 cs-shadow bg-no-repeat bg-center rounded-md"
             ></div>
             {/* Other Info */}
+             {/* Add to Cart */}
+             <button className="block bg-green-500 hover:bg-green-600 duration-500 text-white py-3 text-center w-[230px] my-2 mx-auto rounded-md text-lg font-bold">
+              Add to Cart
+            </button>
           </div>
         </div>
         {/* Course Details */}
@@ -112,13 +116,13 @@ const SingleCourse = () => {
             ></div>
           </div>
           {/* Course Curriculum */}
-          <div>
+          {/* <div>
             <h1 className="text-xl font-bold">Course Curriculum</h1>
             <hr className="mb-2" />
-            {/* Course Units and lessons */}
+            Course Units and lessons
 
             <Curriculum />
-          </div>
+          </div> */}
         </div>
       </div>
     </div>
